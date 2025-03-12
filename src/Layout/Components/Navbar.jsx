@@ -1,51 +1,4 @@
 
-// import React from "react";
-// import { Link } from "react-router-dom";
-
-// const Navbar = () => {
-//   return (
-//     <nav className="bg-blue-500 text-white p-4">
-//       <div className="container mx-auto justify-center flex gap-8">
-//         <Link to="/" className="hover:underline">
-//           Home
-//         </Link>
-//         <Link to="/about" className="hover:underline">
-//           About
-//         </Link>
-//         <Link to="/blog" className="hover:underline">
-//           Blog
-//         </Link>
-//         <Link to="/services" className="hover:underline">
-//           Services
-//         </Link>
-//         <Link to="/portfolio" className="hover:underline">
-//           Portfolio
-//         </Link>
-//         <Link to="/careers" className="hover:underline">
-//           Careers
-//         </Link>
-//         <Link to="/contact" className="hover:underline">
-//           Contact
-//         </Link>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -53,7 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-500 text-white p-4">
+    <nav className="bg-blue-500  text-white p-4">
       <div className="container mx-auto h-16 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-xl font-bold">Cloud Argo</h1>
