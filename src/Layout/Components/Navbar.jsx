@@ -21,7 +21,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul
-          className={`md:flex gap-8 absolute md:static left-0 w-full md:w-auto bg-gray-500 p-4 md:p-0 transition-all ${
+          className={`md:flex gap-8 z-30 absolute md:static left-0 w-full md:w-auto bg-gray-500 p-4 md:p-0 transition-all ${
             isOpen ? "top-16" : "-top-96"
           } md:top-auto`}
         >
