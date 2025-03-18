@@ -55,13 +55,6 @@
 
 // export default Home;
 
-
-
-
-
-
-
-
 // import React from "react";
 // import { Link } from "react-router-dom";
 // import { motion } from "framer-motion";
@@ -197,7 +190,7 @@
 //               </a>
 //             ))}
 //           </div>
-          
+
 //         </div>
 //       </div>
 //     </div>
@@ -205,97 +198,6 @@
 // };
 
 // export default Home;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import React from "react";
 import { useState } from "react";
@@ -305,14 +207,27 @@ import img from "../../assets/img.png";
 import img1 from "../../assets/1.png";
 import img2 from "../../assets/2.png";
 import img3 from "../../assets/3.png";
+import Laptop from "../../assets/laptop.jpg";
 import img4 from "../../assets/4.png";
 import pic from "../../assets/pic.png";
 import { useNavigate } from "react-router-dom";
-
+import { IoClose } from "react-icons/io5";
+import countryList from "react-select-country-list";
 
 const Home = () => {
-    const [isOpen, setIsOpen] = useState(false);
-   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedCode, setSelectedCode] = useState("+1");
+  const [selectedCountry, setSelectedCountry] = useState({
+    code: "+1",
+    flag: "🇺🇸",
+    name: "United States",
+  });
+  const handleEmailRedirect = () => {
+    window.location.href =
+      "mailto:danishsaddique519@gmail.com?subject=New Order&body=Hello, I would like to place an order.";
+  };
+
+  const navigate = useNavigate();
   return (
     <div className="relative min-h-screen flex flex-col">
       {/* Background Section */}
@@ -515,11 +430,17 @@ const Home = () => {
               plays in your business’s success, which is why we tailor our IT
               services to perfectly align with your specific goals and needs
             </p>
-            <button
-              className="mt-6 px-6 py-3 bg-[#ed9421]  rounded-full hover:bg-yellow-400 transition"
+            {/* <button
+              className="mt-6 px-6 py-3 bg-[#ed9421]  rounded-full  hover:bg-yellow-400 transition"
               onClick={() => navigate("/about")}
             >
               Learn More
+            </button> */}
+            <button
+              className="mt-11 px-6 h-16 w-44 py-3 bg-[#ed9421] text-white font-semibold rounded-full hover:bg-yellow-400 transition"
+              onClick={handleEmailRedirect}
+            >
+              Order Now
             </button>
           </motion.div>
         </div>
@@ -527,12 +448,12 @@ const Home = () => {
           {/* Left Side: Text + Button */}
           <div className="w-full md:w-1/2 flex justify-center flex-col items-center md:text-left">
             <h2 className="text-5xl font-bold text-gray-800">
-              WANT TO PLACE AN ORDER ?
+              WANT TO PLACE AN ORDER?
             </h2>
             <p className="mt-4 text-2xl text-gray-600">
               If you’d like to place an order, please provide some more details
-              about what you would like to order We appreciate your business and
-              look forward to helping you with your order.
+              about what you would like to order. We appreciate your business
+              and look forward to helping you.
             </p>
             <div className="flex flex-col items-center">
               {/* Button to Open Form */}
@@ -542,61 +463,97 @@ const Home = () => {
               >
                 Order Now
               </button>
-
-              {/* Popup Form */}
-              {isOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                  <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-                    <h2 className="text-2xl font-bold text-center mb-4">
-                      Place Your Order
-                    </h2>
-
-                    <form className="flex flex-col gap-4">
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        className="border p-2 rounded-md"
-                      />
-                      <input
-                        type="email"
-                        placeholder="Your Email"
-                        className="border p-2 rounded-md"
-                      />
-                      <input
-                        type="text"
-                        placeholder="Your Address"
-                        className="border p-2 rounded-md"
-                      />
-
-                      <button
-                        type="submit"
-                        className="bg-[#ed9421] text-white py-2 rounded-md hover:bg-yellow-400"
-                      >
-                        Submit Order
-                      </button>
-                    </form>
-
-                    {/* Close Button */}
-                    <button
-                      className="mt-4 text-red-500 hover:text-red-700 font-semibold w-full"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
 
-          {/* Right Side: Image */}
+          {/* Right Side: Laptop Image */}
           <div className="w-full md:w-1/2 flex justify-center">
             <img
-              src={pic}
-              alt="Description"
-              className="w-full max-w-sm md:max-w-md rounded-lg "
+              src={Laptop}
+              alt="Laptop"
+              className="w-full max-w-sm md:max-w-md rounded-lg"
             />
           </div>
+
+          {/* Popup Form */}
+          {isOpen && (
+            <div className="fixed inset-0 flex items-center justify-center  bg-opacity-50 z-50">
+              <div className="bg-white z-30 p-6 rounded-lg shadow-lg w-96 relative">
+                {/* Close Button */}
+                <button
+                  className="absolute top-3 right-3 text-gray-600 hover:text-red-500"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <IoClose size={24} />
+                </button>
+
+                <h2 className="text-2xl font-bold text-center mb-4">
+                  Place Your Order
+                </h2>
+
+                <form
+                
+                  className="flex flex-col gap-4">
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="border p-2 rounded-md"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="border p-2 rounded-md"
+                  />
+
+                  {/* Phone Number with Country Code Dropdown */}
+                  <div className="flex items-center border p-2 rounded-md">
+                    <select
+                      className="pr-2"
+                      value={selectedCode}
+                      onChange={(e) => setSelectedCode(e.target.value)}
+                    >
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+91">🇮🇳 +91</option>
+                      <option value="+92">🇵🇰 +92</option>
+                      <option value="+971">🇦🇪 +971</option>
+                    </select>
+                    <input
+                      type="text"
+                      placeholder="Phone Number"
+                      className="flex-1 outline-none pl-2"
+                    />
+                  </div>
+
+                  {/* Select Service Dropdown */}
+                  <select className="border p-2 rounded-md">
+                    <option>Select Service</option>
+                    <option>Web Development</option>
+                    <option>Mobile App Development</option>
+                    <option>UI/UX Design</option>
+                    <option>SEO Optimization</option>
+                    <option>Graphic Design</option>
+                    <option>Digital Marketing</option>
+                    <option>Consultation</option>
+                  </select>
+
+                  {/* Project Details Textarea */}
+                  <textarea
+                    placeholder="Project Details"
+                    className="border p-2 rounded-md h-24"
+                  ></textarea>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className="bg-[#ed9421] text-white py-2 rounded-md hover:bg-yellow-400"
+                  >
+                    Submit Order
+                  </button>
+                </form>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
