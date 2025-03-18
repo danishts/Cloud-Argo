@@ -207,12 +207,14 @@ import img from "../../assets/img.png";
 import img1 from "../../assets/1.png";
 import img2 from "../../assets/2.png";
 import img3 from "../../assets/3.png";
-import Laptop from "../../assets/laptop.jpg";
+// import Laptop from "../../assets/laptop.jpg";
+import {  AnimatePresence } from "framer-motion";
 import img4 from "../../assets/4.png";
 import pic from "../../assets/pic.png";
 import { useNavigate } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import countryList from "react-select-country-list";
+import Services from "./Service";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -445,8 +447,13 @@ const Home = () => {
           </motion.div>
         </div>
         <div className="w-full flex flex-col mt-12 md:flex-row items-center justify-between gap-8 p-8">
-          {/* Left Side: Text + Button */}
-          <div className="w-full md:w-1/2 flex justify-center flex-col items-center md:text-left">
+          {/* Left Side: Text + Button (Animated) */}
+          <motion.div
+            className="w-full md:w-1/2 flex justify-center flex-col items-center md:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-5xl font-bold text-gray-800">
               WANT TO PLACE AN ORDER?
             </h2>
@@ -456,105 +463,130 @@ const Home = () => {
               and look forward to helping you.
             </p>
             <div className="flex flex-col items-center">
-              {/* Button to Open Form */}
-              <button
+              {/* Animated Button */}
+              <motion.button
                 className="mt-11 px-6 h-16 w-44 py-3 bg-[#ed9421] text-white font-semibold rounded-full hover:bg-yellow-400 transition"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={() => setIsOpen(true)}
               >
                 Order Now
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Side: Laptop Image */}
-          <div className="w-full md:w-1/2 flex justify-center">
+          {/* Right Side: Laptop Image (Animated) */}
+          <motion.div
+            className="w-full md:w-1/2 flex justify-center"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <img
-              src={Laptop}
+              src={pic}
               alt="Laptop"
               className="w-full max-w-sm md:max-w-md rounded-lg"
             />
-          </div>
+          </motion.div>
 
-          {/* Popup Form */}
-          {isOpen && (
-            <div className="fixed inset-0 flex items-center justify-center  bg-opacity-50 z-50">
-              <div className="bg-white z-30 p-6 rounded-lg shadow-lg w-96 relative">
-                {/* Close Button */}
-                <button
-                  className="absolute top-3 right-3 text-gray-600 hover:text-red-500"
-                  onClick={() => setIsOpen(false)}
+          {/* Popup Form with Animation */}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                className="fixed inset-0 flex items-center justify-center bg-opacity-50 z-50"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <motion.div
+                  className="bg-white z-30 p-6 rounded-lg shadow-lg w-96 relative"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <IoClose size={24} />
-                </button>
+                  {/* Close Button */}
+                  <button
+                    className="absolute top-3 right-3 text-gray-600 hover:text-red-500"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <IoClose size={24} />
+                  </button>
 
-                <h2 className="text-2xl font-bold text-center mb-4">
-                  Place Your Order
-                </h2>
+                  <h2 className="text-2xl font-bold text-center mb-4">
+                    Place Your Order
+                  </h2>
 
-                <form
-                
-                  className="flex flex-col gap-4">
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="border p-2 rounded-md"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="border p-2 rounded-md"
-                  />
-
-                  {/* Phone Number with Country Code Dropdown */}
-                  <div className="flex items-center border p-2 rounded-md">
-                    <select
-                      className="pr-2"
-                      value={selectedCode}
-                      onChange={(e) => setSelectedCode(e.target.value)}
-                    >
-                      <option value="+1">🇺🇸 +1</option>
-                      <option value="+44">🇬🇧 +44</option>
-                      <option value="+91">🇮🇳 +91</option>
-                      <option value="+92">🇵🇰 +92</option>
-                      <option value="+971">🇦🇪 +971</option>
-                    </select>
+                  <form className="flex flex-col gap-4">
                     <input
                       type="text"
-                      placeholder="Phone Number"
-                      className="flex-1 outline-none pl-2"
+                      placeholder="Full Name"
+                      className="border p-2 rounded-md"
                     />
-                  </div>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      className="border p-2 rounded-md"
+                    />
 
-                  {/* Select Service Dropdown */}
-                  <select className="border p-2 rounded-md">
-                    <option>Select Service</option>
-                    <option>Web Development</option>
-                    <option>Mobile App Development</option>
-                    <option>UI/UX Design</option>
-                    <option>SEO Optimization</option>
-                    <option>Graphic Design</option>
-                    <option>Digital Marketing</option>
-                    <option>Consultation</option>
-                  </select>
+                    {/* Phone Number with Country Code Dropdown */}
+                    <div className="flex items-center border p-2 rounded-md">
+                      <select
+                        className="pr-2"
+                        value={selectedCode}
+                        onChange={(e) => setSelectedCode(e.target.value)}
+                      >
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+92">🇵🇰 +92</option>
+                        <option value="+971">🇦🇪 +971</option>
+                      </select>
+                      <input
+                        type="text"
+                        placeholder="Phone Number"
+                        className="flex-1 outline-none pl-2"
+                      />
+                    </div>
 
-                  {/* Project Details Textarea */}
-                  <textarea
-                    placeholder="Project Details"
-                    className="border p-2 rounded-md h-24"
-                  ></textarea>
+                    {/* Select Service Dropdown */}
+                    <select className="border p-2 rounded-md">
+                      <option>Select Service</option>
+                      <option>Web Development</option>
+                      <option>Mobile App Development</option>
+                      <option>UI/UX Design</option>
+                      <option>SEO Optimization</option>
+                      <option>Graphic Design</option>
+                      <option>Digital Marketing</option>
+                      <option>Consultation</option>
+                    </select>
 
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="bg-[#ed9421] text-white py-2 rounded-md hover:bg-yellow-400"
-                  >
-                    Submit Order
-                  </button>
-                </form>
-              </div>
-            </div>
-          )}
+                    {/* Project Details Textarea */}
+                    <textarea
+                      placeholder="Project Details"
+                      className="border p-2 rounded-md h-24"
+                    ></textarea>
+
+                    {/* Submit Button */}
+                    <motion.button
+                      type="submit"
+                      className="bg-[#ed9421] text-white py-2 rounded-md hover:bg-yellow-400"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Submit Order
+                    </motion.button>
+                  </form>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
+
+
+
+
+        <Services/>
       </div>
     </div>
   );
