@@ -76,18 +76,6 @@
 
 // export default AboutUs;
 
-
-
-
-
-
-
-
-
-
-
-
-
 // import React from "react";
 // import about from "../../assets/about.png";
 
@@ -270,28 +258,6 @@
 
 // export default AboutUs;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React from "react";
 // import about from "../../assets/about.png";
 // import { motion } from "framer-motion";
@@ -459,7 +425,7 @@
 
 //      <div class="flex justify-start py-6 overflow-hidden">
 //   <div class="flex animate-scroll space-x-16">
-    
+
 //     <div class="flex items-center space-x-4">
 //       <div>
 //         <FaChessKing className="h-10 w-10 text-yellow-600" />
@@ -472,7 +438,6 @@
 //       </div>
 //     </div>
 
-   
 //     <div class="flex items-center space-x-4">
 //       <div>
 //         <FaChessKing className="h-10 text-yellow-600 w-10" />
@@ -485,7 +450,6 @@
 //       </div>
 //     </div>
 
-    
 //     <div class="flex items-center space-x-4">
 //       <div>
 //         <FaChessKing className="h-10 text-yellow-600 w-10" />
@@ -498,7 +462,6 @@
 //       </div>
 //     </div>
 
-    
 //     <div class="flex items-center space-x-4">
 //       <div>
 //         <FaChessKing className="h-10 w-10 text-yellow-600" />
@@ -545,55 +508,6 @@
 // };
 
 // export default AboutUs;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import { FaChessKing } from "react-icons/fa"; // Import the icons
@@ -826,77 +740,6 @@
 
 // export default AboutUs;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import { FaChessKing } from "react-icons/fa"; // Import the icons
 import { motion } from "framer-motion"; // Import Framer Motion for animations
@@ -948,14 +791,13 @@ const AboutUs = () => {
   }, [count1, count2, count3, count4]);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       {/* Yellow Section with Heading */}
       <div className="flex items-center justify-center h-[400px] bg-yellow-300">
         <h1 className="text-4xl font-bold text-gray-800">About Us</h1>
       </div>
-
-      {/* Paragraph Section */}
-      <div className="bg-white px-6 py-10 flex items-center justify-center">
+      {/* UPDATE */}
+      {/* <div className="bg-white px-6 py-10 flex items-center justify-center">
         <motion.div
           className="w-full lg:w-1/2"
           initial={{ opacity: 0, x: 100 }}
@@ -972,10 +814,26 @@ const AboutUs = () => {
             goals into reality.
           </p>
         </motion.div>
+      </div> */}
+      <div className="bg-white px-6 py-10 flex items-center justify-center">
+        <motion.div
+          className="w-full lg:w-1/2"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
+          <p className="max-w-4xl  text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl text-center">
+            At Humantek, we deliver superior branding and marketing solutions,
+            leveraging state-of-the-art techniques to align with your strategic
+            objectives. From tailored software solutions to meticulous
+            execution, our approach ensures exceptional conversion rates. With a
+            global presence in the UK, USA, and PK, we are a trusted partner for
+            businesses seeking innovative IT solutions that transform their
+            goals into reality.
+          </p>
+        </motion.div>
       </div>
-
-      {/* Image and Text Section */}
-      <div className="flex flex-col-reverse lg:flex-row items-center px-20 justify-between px-6 py-16 gap-12">
+      <div className="flex flex-col-reverse lg:flex-row items-center px-20 justify-between  py-16 gap-12">
         <motion.div
           className="w-full lg:w-1/2"
           initial={{ opacity: 0, x: 100 }}
@@ -1051,9 +909,9 @@ const AboutUs = () => {
           />
         </motion.div>
       </div>
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between px-20 py-16 gap-12">
+      <div className="flex flex-col-reverse lg:flex-row items-center px-20 justify-between  py-16 gap-12">
         <motion.div
-          className="w-full   lg:w-1/2"
+          className="w-full lg:w-1/2"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -1077,7 +935,7 @@ const AboutUs = () => {
         </motion.div>
 
         <motion.div
-          className="w-full  lg:w-1/2"
+          className="w-full lg:w-1/2"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -1089,56 +947,16 @@ const AboutUs = () => {
           />
         </motion.div>
       </div>
-
-      {/* Scrolling Section - Centered Scroll Effect */}
-      <div className="flex justify-center py-6 overflow-hidden">
-        <div className="flex flex-col lg:flex-row gap-14">
-          {/* Repeated items */}
-          {[
-            { count: count1, label: "Project Done" },
-            { count: count2, label: "Positive Result" },
-            { count: count3, label: "Happy Clients" },
-            { count: count4, label: "Industry Experts" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center space-x-8 mb-6 lg:mb-0 group"
-            >
-              <div className="group-hover:translate-y-[-8px] transition-all duration-300">
-                <FaChessKing className="h-16 w-16 text-yellow-600 group-hover:scale-110 transition-all duration-300" />
-              </div>
-              <div className="flex flex-col">
-                <div className="mt-6">
-                  <motion.div
-                    className="text-3xl mt-2 text-gray-600 font-bold"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                  >
-                    {item.count.toLocaleString()}
-                  </motion.div>
-                  <div className="text-lg mt-2">{item.label}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Core Values Section with Text and Image */}
-      <div className="flex flex-col-reverse lg:flex-row items-center px-20 justify-between ">
-        {/* Text Section */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center">
-          {/* Repeated Paragraphs for Core Values */}
+      .
+      <div className="flex flex-col-reverse lg:flex-row items-center px-6 lg:px-20 py-16">
+        {/* Left Section (Collaboration Text) */}
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
           {[...Array(5)].map((_, index) => (
             <p
               key={index}
               className="text-gray-700 flex items-center p-3 text-lg leading-relaxed"
             >
-              {/* Hand Point Right Icon */}
-
               <FaHandPointRight className="mr-4 text-yellow-600" />
-
               <span className="font-bold">Collaboration:</span>
               <span>
                 {" "}
@@ -1148,10 +966,10 @@ const AboutUs = () => {
           ))}
         </div>
 
-        {/* Image Section with Hover Zoom Effect */}
+        {/* Right Section (Image) */}
         <div className="w-full lg:w-1/2 flex justify-center items-center">
           <div className="relative group">
-            {/* Image */}
+            {/* Image with Hover Effect */}
             <motion.img
               src={about}
               alt="About Humantek"
@@ -1160,50 +978,48 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="p-32">
+      <div className="p-8 sm:p-16 md:p-32">
         <Services />
       </div>
       <div class="text-center mt-10">
-        <h1 class="text-5xl font-bold  mb-8">What Our Clients Say About Us</h1>
+        <h1 class="text-3xl font-bold text-[#121b54] mb-8">
+          What Our Clients Say About Us
+        </h1>
       </div>
-
-      <div class="text-center mt-10">
-        <h1 class="text-3xl font-bold text-[#121b54] mb-8">What Our Clients Say About Us</h1>
-    </div>
-
- 
-    <div class="flex justify-center space-x-9 mt-20 p-6 flex-wrap">
-
-        
-        <div class="bg-[#121b54] text-white rounded-lg shadow-lg p-6 w-80 text-center mb-8 sm:mb-0">
-            <h3 class="text-xl font-semibold mb-4">John Doe</h3>
-            <p class="text-white mb-4">
-                "I had an amazing experience! The staff were so friendly and the
-                service was top-notch. Will definitely come back!"
-            </p>
-            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+      <div className="flex justify-center  space-x-9 p-6 flex-wrap">
+        <div className="bg-[#121b54] text-white rounded-lg shadow-lg p-6 w-80 text-center mb-8 sm:mb-0">
+          <h3 className="text-xl font-semibold mb-4">John Doe</h3>
+          <p className="text-white mb-4">
+            "I had an amazing experience! The staff were so friendly and the
+            service was top-notch. Will definitely come back!"
+          </p>
+          <div className="text-yellow-500">⭐⭐⭐⭐⭐</div>
         </div>
-
-       
-        <div class="bg-[#121b54] rounded-lg text-white p-6 shadow-lg w-80 text-center mb-8 sm:mb-0">
-            <h3 class="text-xl font-semibold mb-4">Sarah Lee</h3>
-            <p class="text-white mb-4">
-                "Fantastic salon with great services. My hair has never looked
-                better, and the atmosphere is so relaxing."
-            </p>
-            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+        <div className="bg-[#121b54] text-white rounded-lg shadow-lg p-6 w-80 text-center mb-8 sm:mb-0">
+          <h3 className="text-xl font-semibold mb-4">John Doe</h3>
+          <p className="text-white mb-4">
+            "I had an amazing experience! The staff were so friendly and the
+            service was top-notch. Will definitely come back!"
+          </p>
+          <div className="text-yellow-500">⭐⭐⭐⭐⭐</div>
         </div>
-
-        <div class="bg-[#121b54] rounded-lg text-white p-6 shadow-lg w-80 text-center mb-8 sm:mb-0">
-            <h3 class="text-xl text-white font-semibold mb-4">Mike Johnson</h3>
-            <p class="text-white mb-4">
-                "I got a facial here, and it was amazing! The products they use are
-                really good, and I felt completely rejuvenated."
-            </p>
-            <div class="text-yellow-500">⭐⭐⭐⭐</div>
+        <div className="bg-[#121b54] text-white rounded-lg shadow-lg p-6 w-80 text-center mb-8 sm:mb-0">
+          <h3 className="text-xl font-semibold mb-4">John Doe</h3>
+          <p className="text-white mb-4">
+            "I had an amazing experience! The staff were so friendly and the
+            service was top-notch. Will definitely come back!"
+          </p>
+          <div className="text-yellow-500">⭐⭐⭐⭐⭐</div>
         </div>
-
-    </div>
+        <div className="bg-[#121b54] text-white rounded-lg shadow-lg p-6 w-80 text-center mb-8 sm:mb-0">
+          <h3 className="text-xl font-semibold mb-4">John Doe</h3>
+          <p className="text-white mb-4">
+            "I had an amazing experience! The staff were so friendly and the
+            service was top-notch. Will definitely come back!"
+          </p>
+          <div className="text-yellow-500">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
     </div>
   );
 };
