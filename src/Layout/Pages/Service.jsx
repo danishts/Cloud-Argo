@@ -1063,7 +1063,7 @@ const Services = () => {
         <h1 className="text-3xl text-center text-yellow-400 font-bold mb-4">
           OUR EXPERTISE
         </h1>
-        <h1 className="text-7xl text-center text-gray-400 font-bold mt-10 mb-4">
+        <h1 className="text-7xl text-center  font-bold mt-10 mb-4">
           <u>Services We Provide</u>
         </h1>
         <p className="text-gray-600 text-center text-2xl mt-10 mb-4">
@@ -1093,7 +1093,7 @@ const Services = () => {
             <motion.img
               src={selectedService.image}
               alt={selectedService.name}
-              className="w-96 mx-auto mt-4 rounded-lg"
+              className="w-96  mx-auto rounded-lg"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />
