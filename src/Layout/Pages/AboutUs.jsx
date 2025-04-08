@@ -1167,34 +1167,43 @@ const AboutUs = () => {
         <h1 class="text-5xl font-bold  mb-8">What Our Clients Say About Us</h1>
       </div>
 
-      <div class="flex justify-center space-x-9  mt-20 p-20">
-        <div class="bg-[#121b54] text-white rounded-lg shadow-lg p-16 w-80 text-center">
-          <h3 class="text-xl font-semibold mb-4">John Doe</h3>
-          <p class="text-white mb-4">
-            "I had an amazing experience! The staff were so friendly and the
-            service was top-notch. Will definitely come back!"
-          </p>
-          <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+      <div class="text-center mt-10">
+        <h1 class="text-3xl font-bold text-[#121b54] mb-8">What Our Clients Say About Us</h1>
+    </div>
+
+ 
+    <div class="flex justify-center space-x-9 mt-20 p-6 flex-wrap">
+
+        
+        <div class="bg-[#121b54] text-white rounded-lg shadow-lg p-6 w-80 text-center mb-8 sm:mb-0">
+            <h3 class="text-xl font-semibold mb-4">John Doe</h3>
+            <p class="text-white mb-4">
+                "I had an amazing experience! The staff were so friendly and the
+                service was top-notch. Will definitely come back!"
+            </p>
+            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
         </div>
 
-        <div class="bg-[#121b54] rounded-lg text-white p-16 shadow-lg p-6 w-80 text-center">
-          <h3 class="text-xl font-semibold mb-4">Sarah Lee</h3>
-          <p class="text-white mb-4">
-            "Fantastic salon with great services. My hair has never looked
-            better, and the atmosphere is so relaxing."
-          </p>
-          <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+       
+        <div class="bg-[#121b54] rounded-lg text-white p-6 shadow-lg w-80 text-center mb-8 sm:mb-0">
+            <h3 class="text-xl font-semibold mb-4">Sarah Lee</h3>
+            <p class="text-white mb-4">
+                "Fantastic salon with great services. My hair has never looked
+                better, and the atmosphere is so relaxing."
+            </p>
+            <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
         </div>
 
-        <div class="bg-[#121b54] rounded-lg text-white p-16 shadow-lg  w-80 text-center">
-          <h3 class="text-xl text-white font-semibold mb-4">Mike Johnson</h3>
-          <p class="text-white mb-4">
-            "I got a facial here, and it was amazing! The products they use are
-            really good, and I felt completely rejuvenated."
-          </p>
-          <div class="text-yellow-500">⭐⭐⭐⭐</div>
+        <div class="bg-[#121b54] rounded-lg text-white p-6 shadow-lg w-80 text-center mb-8 sm:mb-0">
+            <h3 class="text-xl text-white font-semibold mb-4">Mike Johnson</h3>
+            <p class="text-white mb-4">
+                "I got a facial here, and it was amazing! The products they use are
+                really good, and I felt completely rejuvenated."
+            </p>
+            <div class="text-yellow-500">⭐⭐⭐⭐</div>
         </div>
-      </div>
+
+    </div>
     </div>
   );
 };
